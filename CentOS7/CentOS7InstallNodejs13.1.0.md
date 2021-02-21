@@ -50,12 +50,14 @@ yum install m4 -y
 yum install gmp-devel.x86_64 -y
 yum install mpfr-devel.x86_64 -y
 yum install gcc-c++.x86_64 -y
+cd ..
 mkdir gcc-build-7.1.0
 cd gcc-build-7.1.0
 /usr/local/gcc-7.1.0/configure --enable-checking=release --enable-languages=c,c++ --disable-multilib
 make -j4
 make install
 ```
+> ps: /usr/local/gcc-7.1.0/  路径为本地的gcc-7.1.0
 
 [slide]
 # 解压nodejs安装包
@@ -117,3 +119,12 @@ CXXABI_TM_1
 CXXABI_FLOAT128
 ```
 
+[slide]
+
+# 如果报错：
+
+```javascript
+yum whatprovides libstdc++.so.6
+
+yum install libstdc++.so.6  #安装上边查出来的.so
+```
